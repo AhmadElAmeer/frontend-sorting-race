@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorting Race</title>
+  <meta name="description" content="Six sorting algorithms race on the same array. Every comparison and write is counted.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Sorting Race</h1>
+    <p class="lede">Six algorithms sort the same array. Each step, every algorithm performs exactly one operation, a comparison or a write, so the winner is whichever needs the fewest.</p>
+  </header>
+
+  <form class="controls" id="controls" aria-label="Race settings">
+    <label><span class="lbl">Input</span>
+      <select id="input">
+        <option value="random">Random</option>
+        <option value="nearly">Nearly sorted</option>
+        <option value="reversed">Reversed</option>
+        <option value="fewUnique">Few unique values</option>
+      </select>
+    </label>
+    <label><span class="lbl">Size <output id="sizeOut" for="size">60</output></span>
+      <input id="size" type="range" min="10" max="300" step="10" value="60">
+    </label>
+    <label><span class="lbl">Speed <output id="speedOut" for="speed">8</output> ops/frame</span>
+      <input id="speed" type="range" min="0" max="12" step="1" value="3">
+    </label>
+    <label><span class="lbl">Seed</span>
+      <input id="seed" type="number" min="0" max="999999" value="1" inputmode="numeric">
+    </label>
+    <div class="buttons">
+      <button type="button" id="start" class="primary">Start</button>
+      <button type="button" id="step">Step</button>
+      <button type="button" id="reset">New race</button>
+    </div>
+  </form>
+
+  <section class="status" aria-live="polite">
+    <span id="tick">Step 0</span>
+    <span id="finishOrder"></span>
+  </section>
+
+  <main class="lanes" id="lanes"></main>
+
+  <footer class="legend">
+    <span><i class="sw compare"></i>compared</span>
+    <span><i class="sw write"></i>swapped / written</span>
+    <span><i class="sw done"></i>finished</span>
+  </footer>
+
+  <template id="laneTemplate">
+    <article class="lane">
+      <header>
+        <h2></h2>
+        <span class="place" hidden></span>
+      </header>
+      <canvas width="600" height="160" role="img"></canvas>
+      <dl>
+        <div><dt>Comparisons</dt><dd class="compares">0</dd></div>
+        <div><dt>Writes</dt><dd class="writes">0</dd></div>
+        <div><dt>Complexity</dt><dd class="complexity"></dd></div>
+      </dl>
+    </article>
+  </template>
+
+  <script type="module" src="src/ui.js"></script>
+</body>
+</html>
