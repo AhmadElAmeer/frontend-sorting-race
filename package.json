@@ -1,0 +1,16 @@
+{
+  "name": "frontend-sorting-race",
+  "version": "1.0.0",
+  "description": "Six instrumented sorting algorithms racing side by side in the browser",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ahmad Kaiss",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/sorts.test.mjs tests/race.test.mjs",
+    "test:ui": "node --test tests/ui.test.mjs",
+    "bench": "node scripts/bench.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": { "node": ">=20" }
+}
