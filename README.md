@@ -1,5 +1,7 @@
 # frontend-sorting-race
 
+[![CI](https://github.com/AhmadElAmeer/frontend-sorting-race/actions/workflows/ci.yml/badge.svg)](https://github.com/AhmadElAmeer/frontend-sorting-race/actions/workflows/ci.yml)
+
 Six sorting algorithms race on the same array in the browser. Every comparison and every write is counted, and each step gives every algorithm exactly one operation, so the finish order shows which algorithm needs the least work for that input.
 
 **Live demo: https://ahmadelameer.github.io/frontend-sorting-race/**
